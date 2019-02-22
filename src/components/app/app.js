@@ -1,13 +1,28 @@
 import React from 'react'
+import AddFolder from '../add-folder/add-folder.js'
+import Todolist from '../todo-list/todo-list.js'
 import '../app/app.css'
 
-const App = () =>{
-    return(
-        <div>
-            <AddDelBtn />
-            <AddFolder />
-        </div>
-    )
+export default class App extends React.Component{
+  
+    addFolderItem = () =>{
+        console.log('asdfasdf');
+    }
+    render(){
+        return(
+            <div>
+                <AddDelBtn />
+                        <div >
+                            <div className="wrap-data d-flex">
+                                <AddFolder  className=""/>
+                                <Todolist  />
+                                <AddFolder  className=""/>
+                            </div>
+                        </div>
+                        
+                </div>
+        )
+    }
 }
 
 const AddDelBtn = () =>{
@@ -15,17 +30,14 @@ const AddDelBtn = () =>{
         <div>
             <div className="wrap main-btn d-flex">
                 <button className='btn btn-outline-primary btn-add'> Добавить заметку</button>
-                <button className='btn btn-outline-primary'>Удалить заметку</button>
+                <button 
+                 className='btn btn-outline-primary'
+                >
+                    Удалить заметку
+                </button>
             </div>
           
         </div>
     )
 }
-const AddFolder = ()=>{
-    return(
-        <div className="wrap-content border border-secondary">
-            <button className='btn btn-outline-secondary btn-add-folder'>Добавить папку</button>
-        </div>
-    )
-}
-export default App;
+

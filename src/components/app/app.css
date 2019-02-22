@@ -15,9 +15,8 @@ body {
     margin-right: 3px;
 }
 .wrap-content{
-    width: 300px;
-    height: 300px;
-    
+    width: 100%;
     background: #fbf5f5;
     border: 2px #000;
+    height: 500px;
 }
