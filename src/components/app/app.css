@@ -7,6 +7,13 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  li {
+    list-style-type: none; 
+   }
+   ul {
+    margin-left: 0; 
+    padding-left: 0; 
+   }
 .main-btn{
     width: 500px;
     margin: 50px auto;
@@ -15,10 +22,10 @@ body {
     margin-right: 3px;
 }
 .wrap-content{
-    width: 100%;
-    background: #fbf5f5;
-    border: 2px #000;
-    height: 500px;
+  width: 100%;
+  background: #fbf5f5;
+  border: 2px #000;
+  height: 500px;
 }
 .content{
   display: flex;
