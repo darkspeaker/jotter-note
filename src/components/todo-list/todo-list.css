@@ -1,9 +1,12 @@
 .input-text{
     width: 200px;
-    height: 30px;
+    height: 40px;
+    margin-top: 5px;
+
 }
 .btn-list{
-    width: 80px;
-    height: 50px;
+    height: 40px;
     margin-left: 50px;
+    margin-top: 5px;
+    display: none;
 }

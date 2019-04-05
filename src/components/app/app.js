@@ -1,43 +1,30 @@
 import React from 'react'
-import AddFolder from '../add-folder/add-folder.js'
 import Todolist from '../todo-list/todo-list.js'
 import '../app/app.css'
+import AppHeader from '../app-header/app-header.js';
+import AddFolder from '../add-folder/add-folder.js';
+import Details from '../details-todolist/details-todolist.js'
 
-export default class App extends React.Component{
+const App  =()=>{
+
+    const todoDate = [
+        {label: 'drind water', important: false, id: 1},
+        {label: 'love react', important: true, id: 2},
+        {label: 'take care', important: false, id: 3}
+    ];
+    
   
-    addFolderItem = () =>{
-        console.log('asdfasdf');
-    }
-    render(){
         return(
-            <div>
-                <AddDelBtn />
-                        <div >
-                            <div className="wrap-data d-flex">
-                                <AddFolder  className=""/>
-                                <Todolist  />
-                                <AddFolder  className=""/>
-                            </div>
-                        </div>
-                        
+            <div className="todo-app">
+                <AppHeader />
+                <div className="content">
+                    <AddFolder />
+                    <Todolist  todos = {todoDate}/>
+                    <Details />
                 </div>
+                
+            </div>
         )
     }
-}
-
-const AddDelBtn = () =>{
-    return(
-        <div>
-            <div className="wrap main-btn d-flex">
-                <button className='btn btn-outline-primary btn-add'> Добавить заметку</button>
-                <button 
-                 className='btn btn-outline-primary'
-                >
-                    Удалить заметку
-                </button>
-            </div>
-          
-        </div>
-    )
-}
+export default App;
 

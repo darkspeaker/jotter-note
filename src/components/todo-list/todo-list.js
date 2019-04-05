@@ -1,17 +1,21 @@
 import React from 'react';
-import '../todo-list/todo-list.css'
+import TodoListItem from '../todo-list-item/todo-list-item';
+import './todo-list.css'
 
-const Todolist =() =>{
+const TodoList = ({ todos }) => {
+    const elements = todos.map((item) =>{
+        const  { id, ...itemProps } = item
+        return(
+            <li key = {id} className='list-group-item'>
+                <TodoListItem  {...itemProps}/>  
+            </li>
+        )
+    });
     return(
-        <form   className="item-add-form d-flex wrap-content border border-secondary">
-            <input type="text"
-                    className="form-control input-text"
-                    placeholder="Введите ваши задачи"/>
-            <button 
-                className="btn btn-outline-primary btn-list">
-                OK
-            </button>
-        </form>
-    )
-}
-export default Todolist;
+        <ul className="list-group todo-list">
+            { elements }
+        </ul>
+    );
+};
+
+export default TodoList;
