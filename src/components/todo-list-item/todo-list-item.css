@@ -2,8 +2,10 @@
     outline: 0 !important;
     background: transparent;
     border: none;
-    display: none;
 }
-.buttonn:hover{
-    display: inline-block;
+.todo-list-item{
+    font-size: 19px;
+}
+.list-group{
+    padding-right: 250px;
 }
