@@ -31,21 +31,21 @@ class FolderList extends Component {
 	renderList() {
 		return this.props.folders.map(folder => {
 			return (
+				<div className="folder-wrap">
 				<li
-					className="pl-3 font-weight-bold"
+					className="pl-3 font-weight-bold list-folder"
 					key={folder.id}
 					onClick={() => this.props.selectFolder(folder)}
 					onContextMenu={e => {
 						e.preventDefault();
 						this.props.folderOptions(folder);
-					}}
-				>
+					}}> 
 					{folder.id === this.props.rightClickedIndex
 						? <select onChange={this.handleChange.bind(this, folder)}>
 								<option />
 								<option value="renameFolder">Rename Folder</option>
 								<option value="removeFolder">Delete Folder</option>
-								<option value="newFolder">New Folder</option>
+								<option value="newFolder"></option>
 							</select>
 						: ''}
 					{folder.id === this.props.indexToRename
@@ -55,20 +55,17 @@ class FolderList extends Component {
 									value={folder.name}
 									onChange={this.valueChange.bind(this)}
 								/>
-								<input
-									type="submit"
-									style={{
-										position: 'absolute',
-										left: '-9999px',
-										width: '1px',
-										height: '1px'
-									}}
-									tabIndex="-1"
-								/>
+
 							</form>
 						: ''}
-					{folder.name}
-				</li>
+						<div className="folder-items">
+							{folder.name}
+							<span className="icon-del" onClick={removeFolder()}> x</span>
+						</div>
+					
+					
+				</li> 
+				</div>
 			);
 		});
 	}
@@ -76,17 +73,15 @@ class FolderList extends Component {
 		return (
 			<div
 				className={
-					'folder col-sm-2 ' + (this.props.listShowing ? 'hidden' : 'show')
-				}
-			>
-				<ul>
-					{this.renderList()}
+					'folder col-sm-2 ' + (this.props.listShowing ? 'hidden' : 'show')}>
+				<ul >
+					
+					{this.renderList() } 
 				</ul>
 				<div className="new_folder fixed-bottom">
-					<i className="material-icons" onClick={this.props.newFolder}>
-						add
-					</i>
-					<p>New Folder</p>
+					
+						<button onClick={this.props.newFolder}>add New Folder </button> 
+					
 				</div>
 			</div>
 		);

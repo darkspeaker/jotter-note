@@ -21,13 +21,24 @@ body {
 .btn-add{
     margin-right: 3px;
 }
-.wrap-content{
-  width: 100%;
-  background: #fbf5f5;
-  border: 2px #000;
-  height: 500px;
+.note-area{
+  width: 1200px;
+  height: 100vh;
 }
-.content{
-  display: flex;
-  justify-content: space-between;
+.wrap-list{
+  height: 100vh;
 }
+.list-folder{
+  width: 160px;
+  border: 1px solid #000
+}
+.list-folder .icon-del{
+  float: right;
+  color: red;
+  cursor: pointer;
+  display: none;
+}
+.list-folder .folder-items:hover .icon-del{
+  display: inline-block;
+}
+

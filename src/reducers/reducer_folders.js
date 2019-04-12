@@ -8,8 +8,7 @@ import {
 	TOGGLE_FOLDER_LIST
 } from '../lib/folder_constants';
 
-
-let folderlist = [{ name: 'Folder 1', id: 0 }, { name: 'Folder 2', id: 1 }];
+let folderlist = [{ name: 'Note today', id: 0 }, { name: 'Folder 2', id: 1 }];
 let folder_id = 1;
 
 export default function(
@@ -30,7 +29,6 @@ export default function(
 				...state,
 				folderlist: [...state.folderlist, { name: '', id: folder_id }]
 			};
-
 		case FOLDER_OPTIONS:
 			return {
 				...state,
